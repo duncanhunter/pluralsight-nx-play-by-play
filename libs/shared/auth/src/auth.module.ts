@@ -7,17 +7,16 @@ import { authReducer } from './+state/auth.reducer';
 import { authInitialState } from './+state/auth.init';
 import { AuthEffects } from './+state/auth.effects';
 import { LoginComponent } from './containers/login/login.component';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      { path: '', component: LoginComponent },
-    ]),
+    RouterModule.forChild([{ path: '', component: LoginComponent }]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects])
   ],
-  providers: [AuthEffects],
+  providers: [AuthEffects, AuthService],
   declarations: [LoginComponent]
 })
 export class AuthModule {}
