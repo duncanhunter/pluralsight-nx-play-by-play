@@ -1,11 +1,23 @@
-export interface LoadData {
-  type: 'LOAD_DATA';
-  payload: {};
+import { Action } from "@ngrx/store";
+
+export enum AuthActionTypes {
+  Login = '[Auth] Login',
+  LoginSuccess = '[Auth] LoginSuccess',
+  LoginFail = '[Auth] LoginFail'
 }
 
-export interface DataLoaded {
-  type: 'DATA_LOADED';
-  payload: {};
+export class LoginAction implements Action {
+  readonly type = AuthActionTypes.Login
 }
 
-export type AuthAction = LoadData | DataLoaded;
+export class LoginSuccessAction implements Action {
+  readonly type = AuthActionTypes.LoginSuccess
+  constructor(public payload: any) { }
+}
+
+export class LoginFailAction implements Action {
+  readonly type = AuthActionTypes.LoginFail
+  constructor(public payload: any) { }
+}
+
+export type AuthAction = LoginAction | LoginSuccessAction | LoginFailAction;
