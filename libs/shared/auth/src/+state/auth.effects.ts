@@ -13,9 +13,11 @@ export class AuthEffects {
   @Effect()
   loadData = this.dataPersistence.fetch(authActions.AuthActionTypes.Login, {
     run: (action: authActions.LoginAction, state: AuthState) => {
-      return this.authService.login().pipe(map(user => {
-        return new authActions.LoginSuccessAction(user);
-      }))
+      return this.authService.login().pipe(
+        map(user => {
+          return new authActions.LoginSuccessAction(user);
+        })
+      );
     },
 
     onError: (action: authActions.LoginAction, error) => {
@@ -25,5 +27,7 @@ export class AuthEffects {
 
   constructor(
     private authService: AuthService,
-    private actions: Actions, private dataPersistence: DataPersistence<AuthState>) { }
+    private actions: Actions,
+    private dataPersistence: DataPersistence<AuthState>
+  ) {}
 }

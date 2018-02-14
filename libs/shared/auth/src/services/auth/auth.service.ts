@@ -6,6 +6,6 @@ export class AuthService {
   constructor() {}
 
   login() {
-    return of({id: 1, name: 'larster'});
+    return of({ id: 1, name: 'larster' });
   }
 }

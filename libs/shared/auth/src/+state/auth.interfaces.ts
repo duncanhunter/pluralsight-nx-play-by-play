@@ -1,5 +1,6 @@
 export interface Auth {
-  // define state here
+  auth: any;
+  loading: boolean;
 }
 
 export interface AuthState {

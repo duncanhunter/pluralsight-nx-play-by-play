@@ -8,6 +8,7 @@ import { authInitialState } from './+state/auth.init';
 import { AuthEffects } from './+state/auth.effects';
 import { LoginComponent } from './containers/login/login.component';
 import { AuthService } from './services/auth/auth.service';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { AuthService } from './services/auth/auth.service';
     EffectsModule.forFeature([AuthEffects])
   ],
   providers: [AuthEffects, AuthService],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, LoginFormComponent]
 })
 export class AuthModule {}
