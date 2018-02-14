@@ -104,9 +104,9 @@
       }
     },
     {
-      "name": "auth",
-      "root": "libs/auth/src",
-      "test": "../../../test.js",
+      "name": "shared/auth",
+      "root": "libs/shared/auth/src",
+      "test": "../../../../test.js",
       "appRoot": ""
     }
   ]

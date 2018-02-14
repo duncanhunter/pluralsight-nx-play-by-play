@@ -13,10 +13,14 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   imports: [
     BrowserModule,
     NxModule.forRoot(),
-    RouterModule.forRoot([
-      { path: 'auth', loadChildren: '@demo-workspace/auth#AuthModule' }], {
-      initialNavigation: 'enabled'
-    }),
+    RouterModule.forRoot(
+      [
+        { path: 'auth', loadChildren: '@demo-workspace/shared/auth#AuthModule' }
+      ],
+      {
+        initialNavigation: 'enabled'
+      }
+    ),
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],

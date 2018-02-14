@@ -94,7 +94,8 @@
       true,
       {
         "lazyLoad": [
-          "auth"
+          "auth",
+          "shared/auth"
         ],
         "allow": []
       }
