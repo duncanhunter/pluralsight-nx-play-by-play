@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "serve:customer-portal": "ng s -a=customer-portal -p 4201",
+    "serve:admin-portal": "ng s -a=customer-portal -p 4202",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
